@@ -4,7 +4,8 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-FILENAME=${1}
+DEFAULT_FILE="./dtb.bin"
+FILENAME=${1:-$DEFAULT_FILE}
 
 if [ "${FILENAME##*.}" = "vfat" ] || [ "${FILENAME##*.}" = "bin" ]; then
     echo "${FILENAME} is .vfat file."
