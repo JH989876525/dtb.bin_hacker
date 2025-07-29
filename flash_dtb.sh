@@ -1,4 +1,5 @@
 #!/bin/bash
-image_folder="$( cd "$( dirname "$0" )" && pwd )"
+DEFAULT_PATH="$( cd "$( dirname "$0" )" && pwd )"
+IMAGE_FOLDER=${1:-$DEFAULT_PATH}
 
-qdl --storage ufs --include $image_folder/ $image_folder/prog_firehose_ddr.elf $image_folder/rawprogram*.xml
+qdl --storage ufs --include $IMAGE_FOLDER/ $IMAGE_FOLDER/prog_firehose_ddr.elf $IMAGE_FOLDER/rawprogram*.xml
